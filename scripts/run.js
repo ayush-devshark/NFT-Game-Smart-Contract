@@ -5,7 +5,16 @@ const main = async () => {
     );
 
     // Hardhat creates local etherum network for us
-    const gameContract = await gameContractFactory.deploy();
+    const gameContract = await gameContractFactory.deploy(
+        ['Tanjiro', 'Zenitsu ', 'Inosuke'], // Names
+        [
+            'https://i.imgur.com/ps1aD3x.jpeg', // Images
+            'https://i.imgur.com/ShfEK9n.png',
+            'https://i.imgur.com/lSNSraJ.jpeg',
+        ],
+        [100, 200, 300], // HP values
+        [100, 50, 25] // Attack damage values
+    );
 
     // hardhat creates fake "miners"
     await gameContract.deployed();
